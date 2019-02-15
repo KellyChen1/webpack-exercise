@@ -16,7 +16,7 @@ module.exports = {
       filename: 'index.html',      //生成到dist目录html的文件名
       template: path.resolve(__dirname, "../src/index.html"),  //入口模板
       favicon: path.resolve(__dirname, "../src/favicon.ico"), //加载网站图标
-      inject: "body",  //true === body
+      inject: "body",  //true === body, js加在body里
     })
   ]
 }
