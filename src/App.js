@@ -7,6 +7,8 @@ export default class App extends Component {
   }
 
   add = () => {
+    console.log(process.env.BUILD_ENV)
+    debugger
     this.setState({
       count: this.state.count + 1
     })

@@ -17,7 +17,7 @@ module.exports = {
   module:{
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,      //不对node_modules进行编译，提升打包速度
         loader: 'babel-loader'
       }
@@ -39,5 +39,6 @@ module.exports = {
         removeAttributeQuotes: true,  //移除html中可以去掉的引号
       }
     })
+
   ]
 }
