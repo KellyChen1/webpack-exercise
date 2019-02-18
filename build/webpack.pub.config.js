@@ -1,23 +1,18 @@
 const webpack = require('webpack');
 
 const webpackConfig = require('./webpack.base.config');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 webpackConfig.plugins.push(
   new webpack.DefinePlugin({
     // 'process.env.NODE_ENV': JSON.stringify('production')
-    'process.env.BUILD_ENV': JSON.stringify(process.env.BUILD_ENV)      //设置production全局变量
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)      //设置production全局变量
   }))
-
-// webpackConfig.plugins.push(
-//   new webpack.optimize.UglifyJsPlugin({     //在发布时清除warning, console, debugger
-//     compress: {
-//       warnings: false,
-//       drop_console: true,      
-//       drop_debugger: true
-//     }
-//   })
-// )
   
-
+webpackConfig.optimization={
+  minimize:true,
+  // //取代 new webpack.NoEmitOnErrorsPlugin()，编译错误时不打印输出资源。
+  // noEmitOnErrors: true
+}
 
 module.exports = webpackConfig;
