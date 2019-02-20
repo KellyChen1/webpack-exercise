@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./app.less"
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +19,7 @@ export default class App extends Component {
       <div>
         <h1>{this.state.count}</h1>
         <button onClick={this.add}>Click Add</button>
+        <div className="bg"></div>
       </div>
     )
   }

@@ -21,15 +21,13 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,      //不对node_modules进行编译，提升打包速度
         loader: 'babel-loader'
-      },
-      {
+      },{
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use:"css-loader"
         })
-      },
-      {
+      },{
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
           use:[                    //use: 用loader去编译
@@ -39,6 +37,9 @@ module.exports = {
           ],
           fallback:"style-loader"   //fallback用style-loader提取css
         })
+      },{
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        loader: 'url-loader?limit=8096&name=[name].[hash:8].[ext]'
       }
     ]
   },
